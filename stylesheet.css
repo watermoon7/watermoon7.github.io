@@ -1,0 +1,95 @@
+/* Fonts */
+
+@font-face {
+	font-family: 'Inconsolata';
+	src: url('inconsolata/Inconsolata-regular.ttf') format('truetype');
+}
+
+
+/* Classes */
+
+.marginright {
+	margin-right: 3vw;
+}
+
+.alignright {
+	margin-left: auto;
+}
+
+
+/* IDs */
+
+#yash {
+	width: 25%;
+}
+
+#current {
+	text-shadow: #e26822 1px 1px 3px;
+}
+
+
+/* Elements */
+
+html {
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-justify: inter-character;
+	color: #fcfa88;
+}
+
+body {
+	background-color: #023d25;
+	margin: 3vw;
+}
+
+header, footer {
+	display: flex;
+	align-items: center;
+}
+
+header {
+	margin-top: -1rem;
+}
+
+hr {
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+	margin-left: -2vw;
+	margin-right: -2vw;
+	color: #e26822;
+}
+
+h1 {
+	text-shadow: #FFCC00 1px 1px 3px;
+	margin-left: -2vw;
+}
+
+h2 {
+	margin-left: -1vw;
+}
+
+a {
+	color: #e26822;	
+}
+
+img {
+	box-shadow: black 1px 1px 8px;
+	margin-top: 1vw;
+	margin-bottom: 1vw;
+	display: block;
+}
+
+em {
+	color: #dd966c;
+}
+
+b {
+	text-shadow: #FFCC00 1px 1px 3px;
+}
+
+/* Properties */
+
+a:hover {
+	color: #af4203;
+}

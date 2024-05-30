@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of processor</title>
+    <!-- Add title -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <a class="marginright" href="index.html">Main Page</a>
+        <a class="marginright" href="about.html">About</a>
+        <a class="marginright" id="current" href="template.html">Template</a> 
+        <!-- Remove id="current" -->
+
+    </header>
+
+    <h1>Types of processor</h1>
+    <h2>RISC and CISC</h2>
+    <p>Reduced instruction set computers (RISCs) and complex instruction set computers (CISCs) are two types of processors. An the name implies, RISC has a small set of instructions that the CPU can decode and execute. Each instruction in RISC approximately takes one clock cycle. CISC has a large set of instructions to do more complex tasks. CISC processors are generally more complicated and some instructions may take multiple clock cycles. The aim of CISC is to execute tasks in as few lines as possible.</p>
+    <label>Here are the main differences between the two types of processors:</label>
+    <img width=600rem src="risc_vs_cisc.png">
+
+    <h2>GPUs</h2>
+    <p>The graphical processing unit (GPU) is a device with many small processors which all work in parallel.</p>
+    <label>This image shows a GPU under a microscope. The highlighted block, as well as all the other identical blocks, have 128 individual processors each.</label>
+    <img width=500rem src="gpu_under_microscope.jpg">
+
+    <h2>Concurrency, parallelism and threading</h2>
+    <p>Concurrency is the ability of a system to manage multiple processes at the same time. This does not necessary mean the processes are being processed at the same time as as explained below.</p>
+    <label>Here are the two methods in which a system can achieve concurrency:</label>
+    <ol>
+        <li>Parallelism</li>
+    </ol>
+    <p>Different processes can be run on different processors at the same time. This is <b>only possible on a multi-core system or multiple processors</b>.</p>
+    <ol start="2">
+        <li>Threading</li>
+    </ol>
+    <p>Allotting small time slots to processes and then quickly switching between them. This gives the illusion that they are happening at the same time. This is possible on <b>both single and multi-core systems</b></p>
+
+
+
+
+
+
+    <hr>
+    <footer>
+        <label class="alignright">Last edited 29/5/2024</label>
+    </footer>
+</body>
+</html>

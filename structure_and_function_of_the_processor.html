@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure and function of the processor</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <a class="marginright" href="index.html">Main Page</a>
+        <a class="marginright" href="about.html">About</a>
+        <a class="marginright" href="template.html">Template</a>
+    </header>
+
+    <h1>Structure and function of the processor</h1>
+
+    <h2>Layout of a CPU</h2>
+    <p>A CPU consists of a an <b>arithmetic logic unit (ALU)</b>, which completes arithmetic and logical operations, a <b>control unit (CU)</b>, which decodes instructions and coordinates activities of the CPU, as well as several <b>registers</b> and <b>buses</b>.</p>
+    <label>Registers</label>
+    <ul>
+        <li>Program counter (PC) - holds the address of the next instruction</li>
+        <li>Accumulator (ACC) - holds results from calculations</li>
+        <li>Memory address register (MAR) - holds an address that is currently in use e.g. to be read or written to</li>
+        <li>Memory data register (MDR) - holds data currently in use</li>
+        <li>Current instruction register (CIR) - holds the current instruction</li>
+    </ul>
+    <label>Buses</label>
+    <ul>
+        <li>Data bus - a bi-directional bus that transfers data and instructions between components</li>
+        <li>Address bus - used to transfer addresses between components</li>
+        <li>Control bus - a bi-directional bus that is used to transfer control signals sent from the CU</li>
+    </ul>
+
+    <h2>Instructions</h2>
+    <p>Each instruction can be split into two parts. The <b>opcode</b> and the <b>operand</b>. The opcode contains the operation, for example fetch or add, and the operand contains the data to be operated on.</p>
+
+    <img src="instruction_example.png" width="800rem">
+    <p>The addressing mode section defines how the instruction is retrieved by the data bus if necessary. There are four main types of addressing modes.</p>
+    <ul>
+        <li>Immediate addressing - the operand is the data to be used e.g. <b>LOAD #5</b> will load the value 5</li>
+        <li>Direct addressing - the operand's memory address holds the data to be used e.g. <b>LOAD 500</b> will load the value in memory location 500</li>
+        <li>Indirect addressing - the operand's memory address is the location of the data to be used e.g. <b>LOAD (500)</b> will load the value found at the memory address specified in memory location 500</li>
+        <li>Indexed addressing - the operand's memory address <b>plus some constant</b> holds the data to be used e.g. <b>LOAD 500, X</b> will load the value in memory location 500+X</li>
+    </ul>
+
+    <h2>Fetch Decode Execute Cycle (FDE cycle)</h2>
+    <p>The FDE cycle is a <b>sequence of operations</b> to execute an instruction.</p>
+    <label>Fetch phase</label>
+    <ol>
+        <li>Address from the PC is copied to the MAR (by the address bus)</li>
+        <li>The data at the address is fetched and stored in the MDR (by the data bus)</li>
+        <li><b>Simultaniously</b>, the PC is incremented by 1</li>
+        <li>The data in the MDR is copied to the CIR (by the data bus)</li>
+    </ol>
+    <label>Decode phase</label>
+    <ol start=5>
+        <li>The contents of the CIR are split into the operand and opcode</li>
+        <li>The opcode is sent to the CU (by the data bus) and is decoded</li>
+    </ol>
+    <label>Execute phase</label>
+    <ol start=7>
+        <li>The CU directs the execution of the opcode e.g. signals the ALU to perform a logic operation</li>
+    </ol>
+
+    <h2>Factors affecting the performance of a CPU</h2>
+    <label>There are three physical factors which affect the performance of a CPU</label>
+    <ul>
+        <li>Clock speed (Hz) - the number of cycles performed in the CPU per second</li>
+        <li>Number of cores - a core is an independant processor capable of of running it's own FDE cycle</li>
+        <li>Cache size - memory inside the CPU which holds commonly used instructions. Cache is fast because it is physically close to the other components of the CPU</li>
+    </ul>
+    <p>When it comes to clock speed, the faster the better. However, more cores and higher cache size does is not always better for performance. Some programs only work on a single core meaning every other core is unutilised. The number of cores affecting the performance of a CPU depends on which program is running and how the program is coded. The size of cache is limited by the amount of space is a CPU. The larger the CPU, the further the cache is from key components, which slows down retrieval.</p>
+
+    <h3>Pipelining</h3>
+    <p>In the FDE cycle, while one instruction is being executed, another can be fetched and another can be decoded meaning <b>three instructions are on the FDE cycle at the same time</b>. This reduceds idle time in the CPU however it can lead to errors, for example the instruction being executed changes a value in memory <b>after</b> it has been fetched.</p>
+
+
+    <h2>Different Architechures</h2>
+    <p>Von Neumann architecture</p>
+    <ul>
+        <li>Data and instructions are stored in the same location and the data bus is used for both data and instructions</li>
+        <li>Advantages include: cheaper to develop as the CU is easier to design, programs can be optimised in size</li>
+    </ul>
+    <p>Harvard architecture</p>
+    <ul>
+        <li>There are seperate memories for data and instructions as well as seperate buses for data and instructions</li>
+        <li>Advantages include: faster execution as data and instructions can be fetched in parallel, the memories can be different sizes depending on your requirements</li>
+    </ul>
+    <p>Contemporary processing</p>
+    <ul>
+        <li>A combination of Von Neumann and Harvard architecture - Vonn Neuman is used when working with data and instructions from main memory whereas Harvard is used to divide cache into instructions and data</li>
+    </ul>
+
+    <hr>
+    <footer>
+        <label class="alignright">Last edited 29/5/2024</label>
+    </footer>
+</body>
+</html>
