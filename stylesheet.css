@@ -2,7 +2,9 @@
 
 @font-face {
 	font-family: 'Inconsolata';
-	src: url('inconsolata/Inconsolata-regular.ttf') format('truetype');
+	src: url('/inconsolata/Inconsolata-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
@@ -31,7 +33,7 @@
 /* Elements */
 
 html {
-	font-family: 'Inconsolata', sans-serif;
+	font-family: 'Inconsolata', "Courier New", sans-serif;
 	font-size: 16px;
 	letter-spacing: 1px;
 	text-justify: inter-character;
