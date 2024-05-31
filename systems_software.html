@@ -2,9 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems Software</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+    <header>
+        <a class="marginright" href="index.html">Main Page</a>
+        <a class="marginright" href="about.html">About</a>
+        <a class="marginright" href="template.html">Template</a>
+    </header>
 
+    <h1>Systems Software</h1>
+    <h2>Operating Systems</h2>
+    <p>
+        An operating system is a collection of programs that work together to provide an <b>interface between the user and computer</b>.
+        Popular operating systems include WindowsOS, MACOS, IOS, and Linux.
+    </p>
+    <label>These are the main functions of an operating system:</label>
+    <ul>
+        <li>Memory management (management of primary and secondary storage)</li>
+        <li>Resource management (scheduling)</li>
+        <li>File management</li>
+        <li>Input/Output management (device drivers)</li>
+        <li>Interrupt management</li>
+        <li>Utility software (disk defragmentation, backup, anti-virus, formatting)</li>
+        <li>Security (firewall)</li>
+        <li>User interface</li>
+    </ul>
+
+    <h2>Memory Management</h2>
+    <p>
+        Memory must be shared between multiple programs running simultaneously.
+        Here are some of the methods used to manage memory in a system.
+    </p>
+    <label>Paging</label>
+    <ul>
+        <li>
+            Paging is when memory is split into equal size chunks, known as pages.
+            Programs can take up multiple pages, and each one can be swapped between the hard disk as needed.
+        </li>
+    </ul>
+    <img width="300rem" src="paging_example.png">
+    <label>Segmentation</label>
+    <ul>
+        <li>
+            Segmentation is the splitting up of memory into different sized chunks to fit the program running.
+            Segments are allocated to different blocks of code in a program.
+        </li>
+    </ul>
+    <img width="300rem" src="segmentation_example.png">
+    <label>Virtual memory</label>
+    <ul>
+        <li>
+            Virtual memory is a section of the hard drive
+            which acts as part of the RAM when there isn't enough space for programs to run.
+            Sections of programs that aren't currently in use are swapped to the virtual memory,
+            freeing up space for other programs.
+        </li>
+    </ul>
+    <p>
+        The key issue with each of these techniques is <b>disk thrashing</b>.
+        When pages of the main memory are swapped too often,
+        more time is spent swapping the sections than executing them.
+        This leads to "freezes" and slows down the running programs.
+    </p>
+
+    <h2>Interrupts</h2>
+    <p>
+        Interrupts are signals from software or hardware indicating that a process needs attention.
+        Different processes have different priorities,
+        so they are stored in order of priority in a <b>priority queue</b>.
+        Examples of interrupts include:
+        the power button being pressed, a mouse being disconnected and a printer finishing a job.
+    </p>
+    <p>
+        At the end of each FDE cycle, the CPU checks for higher priority tasks than the current one.
+        If one exists, the contents of each register in the CPU are stored in a stack
+        while the higher priority task is executed.
+    </p>
+
+    <h2>Scheduling</h2>
+    <p>
+        It is the operating system's job to ensure each section of each program receives a fair amount of processing time.
+        To do this, scheduling algorithms are used to determine which job should be processed first.
+    </p>
+    <label>Here are some scheduling algorithms:</label>
+    <ul>
+        <li>
+            Round-robin — the processor processes each job for a set amount of time called a time slice,
+            and then repeats until all jobs are finished.
+            The drawback to this is that longer jobs will take much longer to complete
+        </li>
+        <li>
+            First come, first served — jobs are completed in chronological order by when they enter the queue.
+            This method doesn't allow for priority queueing.
+        </li>
+        <li>
+            Multilevel feedback queues — jobs are placed in a queue based on priority
+            and the processor processes the highest priority jobs first
+        </li>
+        <li>
+            Shortest job first — the shortest job is processed first.
+            This requires the CPU to know how long each task will take.
+            There is also a risk of processor starvation where short jobs continue being added to the queue.
+        </li>
+        <li>
+            Shortest time remaining — the job with the shortest time remaining is processed until it is finished
+            or a job with a shorter time remaining exists in the queue. Again, there is a risk of processor starvation.
+        </li>
+    </ul>
+
+
+    <h2>Types of operating systems</h2>
+    <label>Here are the different types of operating systems:</label>
+    <ul>
+        <li>Distributed — multiple devices share the same operating system</li>
+        <li>Embedded — an operating system with a specific task. Build within a larger system</li>
+        <li>Multitasking — tasks can be done seemingly simultaneously with the use of time slicing</li>
+        <li>Multi-user — multiple users can use one operating system, usually a supercomputer,
+            so jobs must be properly scheduled.</li>
+        <li>Real time — used in time-critical scenarios such as in nuclear power stations, self-driving cars, etc.
+            They are built to be fast and reliable.</li>
+    </ul>
+
+    <h2>BIOS</h2>
+    <p>
+        The BIOS, or basic input output system, is the first program that runs when a computer is turned on.
+        The BIOS checks that the CPU is operational, the hardware is connected and for external memory devices.
+    </p>
+
+    <h2>Device drivers</h2>
+    <p>
+        Device drivers are programs that allow the OS to communicate with hardware.
+        It translates signals between the hardware and processor.
+        Device drivers are specific to both the OS and the architecture of the CPU.
+    </p>
+
+    <h2>Virtual machines</h2>
+    <p>
+        A virtual machine is an emulation of a physical computer.
+        The functionality of a physical computer is provided using software.
+        Virtual machines have translators to translate intermediate code into bytecode that the virtual hardware can run.
+    </p>
+    <label>Here is an example of how a virtual machine works</label>
+    <ol>
+        <li>A program is run in the virtual machine</li>
+        <li>The program is translated to intermediate code</li>
+        <li>The virtual machine's translator then translates this into bytecode</li>
+        <li>Virtual hardware then processes this bytecode</li>
+        <li>This executes the program</li>
+    </ol>
+    <label>Virtual machines are useful for a few different reasons;</label>
+    <ul>
+        <li>Testing software in different operating systems</li>
+        <li>Malware will only affect the virtual machine rather than the host computer</li>
+        <li>VMs can be used to run software that is incompatible with the physical processor</li>
+    </ul>
+    <p>
+        However, because they are not run on processor-specific hardware,
+        virtual machines are typically slower than a physical machine.
+    </p>
+
+    <hr>
+    <footer>
+        <label class="alignright">Last edited 30/5/2024</label>
+    </footer>
 </body>
 </html>

@@ -2,9 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications Generation</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+    <header>
+        <a class="marginright" href="index.html">Main Page</a>
+        <a class="marginright" href="about.html">About</a>
+        <a class="marginright" href="template.html">Template</a>
+    </header>
 
+    <h1>Applications Generation</h1>
+
+    <h2>Utility software</h2>
+    <p>
+        Utility software is software used for the maintenance of an operating system.
+        It is used to ensure consistent and high performance of an OS.
+    </p>
+    <label>Here are some examples of types of utility software:</label>
+    <ul>
+        <li>Compression - reduces the size of files by reformatting the data or by removing unnecessary data</li>
+        <li>Disk defragmentation – Over time, some files become fragmented in the hard drive.
+            Disk defragmentation rearranges the contents of the hard drive so files can be accessed more efficiently</li>
+        <li>Antivirus/ anti-malware – detects and removes malicious files from the system</li>
+        <li>Backup – routinely creates backups of specific files selected by the user</li>
+    </ul>
+
+    <h2>Open source vs closed source software</h2>
+    <p>
+        Open source and closed source software refers to whether software is publicly available or not.
+    </p>
+    <label>Advantages of open source</label>
+    <ul>
+        <li>It can be modified and improved by anyone</li>
+        <li>Technical support from the community</li>
+        <li>It Can be freely modified and sold</li>
+    </ul>
+    <label>Disadvantages of open source</label>
+    <ul>
+        <li>There is lower security, so code can be damaged or deleted</li>
+        <li>Support online may be insufficient or there may not be a user manual</li>
+    </ul>
+    <label>Advantages of closed source</label>
+    <ul>
+        <li>Regular updates and well tested</li>
+        <li>Technical support and user manuals available</li>
+        <li>High levels of security</li>
+    </ul>
+    <label>Disadvantages of close source</label>
+    <ul>
+        <li>Licence restricts how the software can be used</li>
+        <li>Users cannot modify and improve the software as they do not have access to the source code</li>
+    </ul>
+
+    <h2>Translators</h2>
+    <p>A translator is a program that converts high-level source code into low-level object code (code a computer can execute e.g. machine code)</p>
+    <label>There are three main types of translators:</label>
+    <ul>
+        <li>Compiler – <b>translates all the code at once</b> as well as performing checks and reporting errors</li>
+    </ul>
+    <ul>
+        <li>
+            Interpreter - <b>translates and executes</b> the code <b>line by line</b>.
+            Interpreters are useful for testing code during development;
+            however, they are slower than compiled files as the code has to be translated each time it is run
+        </li>
+    </ul>
+    <ul>
+        <li>
+            Assembler – assemblers <b>translate assembly code into machine code</b>.
+            Assembly code is "one level up" from machine code and is processor-specific.
+            Each line of assembly code is roughly one line of machine code, but is more <b>human-readable</b>.
+        </li>
+    </ul>
+
+    <h2>Stages of compilation</h2>
+    <p>Compilation is a complicated process involving four main stages of processing.</p>
+    <h3>1. Lexical analysis</h3>
+    <p>
+        First, <b>whitespace and comments are removed</b>.
+        Then, the code is split into words and special characters which are represented as <b>tokens</b>.
+    </p>
+    <img width="400rem" src="tokens_example.png">
+    <h3>2. Syntax analysis</h3>
+    <p>
+        Tokens are then checked against the syntax of the language ensuring they are in a valid order.
+        Any tokens that violate the grammar of the language are added to a list and outputted at the end of this stage.
+        An <b>abstract syntax tree</b> is produced which represents the source code as a tree.
+        Moreover, a <b>symbol table</b> is added to identify the names of defined objects.
+        <b>Semantic analysis</b> is where logical mistakes are found, e.g. an undeclared variable.
+    </p>
+
+    <h3>3. Code generation</h3>
+    <p>
+        The abstract syntax tree is used to generate object/machine code.
+    </p>
+
+    <h3>4. Code optimisation</h3>
+    <p>
+        Optimisation involves searching the machine code for ways to improve the efficiency of the program.
+        For example, redundant code is removed, or repeated code is grouped and replaced with more efficient code.
+    </p>
+
+    <h2>Linkers, loaders and libraries</h2>
+    <p>
+        Libraries are pre-compiled programs containing code which can be incorporated into other programs using a linker.
+        Libraries are useful because the code is efficient, error free and can save time in developing modules.
+        There are two types of linkers: static and dynamic.
+        Static linkers copy the library into the main file, meaning update to the library won't affect the program.
+        However, this does increase the file size.
+        Dynamic linkers include the address of a library in the main file reducing the file size.
+        The library is retrieved during runtime.
+    </p>
+    <hr>
+    <footer>
+        <label class="alignright">Last edited 30/5/24</label>
+    </footer>
 </body>
 </html>
