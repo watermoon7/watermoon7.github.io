@@ -21,27 +21,68 @@
         </p>
         <h3>Lossless compression</h3>
         <p>
-            No data is lost in lossless compression. What a surprise! Repeating patterns of characters or bytes are replaced by symbols which signify certain things.
+            No data is lost in lossless compression – what a surprise!
             There are two main types of lossless compression: run length encoding, and dictionary encoding.
         </p>
+        <p>
+            Run length encoding looks for repeating characters, and represents them with numbers. For example,
+            the string "aaaaaBBBBBBccc" becomes "a5B6c3" meaning there are 5 "a" characters, 6 "B" characters,
+            and 3 "c" characters.
+        </p>
+        <p>
+            Dictionary encoding replaces repeated words or phrases with a symbol which can be indexed in a dictionary.
+            The dictionary stores the meanings of symbols.
+            Here is an example of dictionary encoding with the paragraph below.
+        </p>
+        <img src="dictionary_encoding_example_1.png">
+
+        <img src="dictionary_encoding_example_2.png">
         <h3>Lossy compression</h3>
-        <p></p>
+        <p>
+            Lossy compression removes unnecessary data.
+            In audio files, high and low frequencies which can't be heard by humans are removed.
+            In video files, common colours replace uncommon shades of those colors do decrease the bid depth of the file.
+            Unlike lossless compression, the original file cannot be retrieved after lossy compression is applied.
+        </p>
 
         <h2>Encryption</h2>
         <p>Encryption is the process of
             <a href="https://www.collinsdictionary.com/dictionary/english/obfuscate"><span class="definition" data-definition="techniques used to make data difficult to understand or interpret"><u>obfuscating</u></span></a>
-            data to keep it secure when it's being transmitted.</p>
+            data to keep it secure when it's being transmitted.
+        </p>
         <h3>Symmetric encryption</h3>
-        <p></p>
+        <p>Symmetric encryption uses a single private
+            <span class="definition" data-definition="a string used to encode plaintext or decode ciphertext">
+                <u>key</u>
+            </span>
+            that both the sender and receiver have. The sender first encodes the data, before transmitting it to a recipient.
+            The encoded data can then be decoded using the private key.
+        </p>
         <h3>Asymmetric encryption</h3>
-        <p></p>
-
+        <p>
+            Asymmetric encryption uses two keys – a private key and a public key.
+            The public key (publicly available) can be used to encode data, but it cannot decode the data.
+            Only the private key can decode the data.
+            This means that anyone can send you a message, but only you can decode the message.
+            This process also works in reverse. If you encode a message with your private key,
+            anyone can decode it with the public key.
+        </p>
         <h2>Hashing</h2>
-        <p></p>
+        <p>
+            Hashing is a process where an input (called a key) is converted to an output (called a hash) by using a hash function.
+            A simple example of a hash function being applied to a password would be to sum the position in the alphabet of each character.
+            For example, "password" becomes 16+1+19+19+23+15+18+4 which equals 115.
+            This process cannot be reversed because multiple combinations of characters will sum to 115.
+            Usually, a good hash function will have a low chance for any key to have the same hash, so this process is useful for checking passwords.
+        </p>
+        <p>
+            Another use of hashing is hash tables. A hash table is a data structure which holds key-value pairs.
+
+        </p>
 
         <hr>
         <footer>
-            <label class="alignright">Last edited</label>
+            <label class="alignright">Last edited 9/6/2024</label>
             <!-- Add when last edited -->
         </footer>
     </body>
